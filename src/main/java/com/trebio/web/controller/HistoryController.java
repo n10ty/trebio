@@ -35,9 +35,6 @@ public class HistoryController {
 
         ModelAndView mav = new ModelAndView();
         mav.setViewName("history");
-        // start
-
-        // finish
         mav.addObject("messages", messages);
         mav.addObject("pageNumber", pageNumber);
         mav.addObject("channel", tlChannel);

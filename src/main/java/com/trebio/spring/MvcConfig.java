@@ -41,12 +41,6 @@ public class MvcConfig implements WebMvcConfigurer {
         registry.addViewController("channel/{channelId}/post/text").setViewName("channel/post_text");
         registry.addViewController("channel/{channelId}/post/photo").setViewName("channel/post_photo");
         registry.addViewController("/").setViewName("index");
-//        registry.addViewController("channel/send").setViewName("channel/post_photo");
-//        registry.addViewController("channel/auth").setViewName("channel/post_photo");
-//        registry.addViewController("/login").setViewName("user/login");
-//        registry.addViewController("/").setViewName("home");
-//        registry.addViewController("/hello").setViewName("hello");
-//        registry.addViewController("/login").setViewName("login");
     }
 
     @Bean

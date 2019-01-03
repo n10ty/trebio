@@ -31,15 +31,11 @@ import java.util.Optional;
 @RequestMapping(value = "/init")
 public class InitialSetupController {
 
-    private PostingBot bot;
     private ChannelInitializer channelInitializer;
-    private ChannelRepository channelRepository;
 
     @Autowired
-    public InitialSetupController(PostingBot bot, ChannelInitializer channelInitializer, ChannelRepository channelRepository) {
-        this.bot = bot;
+    public InitialSetupController(ChannelInitializer channelInitializer) {
         this.channelInitializer = channelInitializer;
-        this.channelRepository = channelRepository;
     }
 
     @GetMapping(value = "/steps/1")
