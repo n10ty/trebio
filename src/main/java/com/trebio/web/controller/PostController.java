@@ -1,7 +1,6 @@
 package com.trebio.web.controller;
 
 import com.github.badoualy.telegram.tl.exception.RpcErrorException;
-import com.trebio.context.bot.model.KotloBot;
 import com.trebio.context.channel.api.channel.PostPhotoEvent;
 import com.trebio.context.channel.api.channel.PostTextEvent;
 import com.trebio.context.channel.model.Channel;

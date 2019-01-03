@@ -10,7 +10,7 @@ import java.util.Optional;
 import java.util.concurrent.Callable;
 
 /**
- * Jot that response for send schedule to pool.
+ * Send schedule to pool.
  */
 public class SchedulePoster implements Callable {
 
@@ -34,7 +34,7 @@ public class SchedulePoster implements Callable {
             } else if(post.isPhoto()) {
                 publisher.publishEvent(new PostPhotoInstantEvent(postId));
             } else {
-                throw new Exception("Unsupported type of instant pusblish");
+                throw new Exception("Unsupported type of instant publish");
             }
         }
 

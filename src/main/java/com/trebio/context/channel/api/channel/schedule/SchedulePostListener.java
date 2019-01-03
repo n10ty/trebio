@@ -28,8 +28,6 @@ public class SchedulePostListener implements ApplicationListener<SchedulePostEve
         if (postOptional.isPresent()) {
             Post post = postOptional.get();
 
-            //Logger.d("APP", String.format("Scheduled: %s, %s", post.getId(), post.getPublishAt()));
-
             pool.schedule(
                     new SchedulePoster(event.getPostId(), new SchedulePosterContext(publisher, postRepository)),
                     post.getPublishAt()

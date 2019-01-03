@@ -32,8 +32,6 @@ public class PostPhotoListener implements ApplicationListener<PostPhotoEvent> {
                 ? new PostPhotoInstantEvent(post.getId())
                 : new SchedulePostEvent(post.getId());
         publisher.publishEvent(postEvent);
-
-        //Logger.d("APP", String.format("Post photo: %s, %s", post.getId(), post.getPublishAt()));
     }
 
     private PhotoPost savePost(PostPhotoEvent event) {
