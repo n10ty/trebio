@@ -1,0 +1,37 @@
+{% extends "first_steps/parent" %}
+
+{% block content %}
+
+<div>
+    <div>
+        <ul class="stepper stepper-horizontal">
+            <!-- First Step -->
+            <li>
+                <a class="disabled">
+                    <span class="circle">1</span>
+                    <span class="label">Впишите имя канала</span>
+                </a>
+            </li>
+
+            <!-- Second Step -->
+            <li class="active">
+                <a href="#!">
+                    <span class="circle">2</span>
+                    <span class="label">Добавьте бота в канал</span>
+                </a>
+            </li>
+
+            <!-- Third Step -->
+            <li>
+                <a href="disabled">
+                    <span class="circle"><i class="fa fa-warning"></i></span>
+                    <span class="label">Напишите первый пост!</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-offset-2 col-md-7">
+        <h2>Готово! Теперь вы можете написать свой первое <a href="/post/{{channelId}}/text">текстовое</a> сообщение или <a href="/post/{{channelId}}/photo">картинку</a></h2>
+    </div>
+</div>
+{% endblock %}

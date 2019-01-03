@@ -1,0 +1,15 @@
+{% extends "index" %}
+
+{% block content %}
+
+<form name="postTextForm" action="/post/{{channelId}}/text" method="post" accept-charset="UTF-8">
+    <div class="form-group">
+        <label for="formPostText">Post text</label>
+        <textarea name="postText" class="form-control" id="formPostText" rows="10"></textarea>
+        <div class='col-sm-6'>
+            <input type='text' name="publishAt" class="form-control" id='datetimepicker1' />
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

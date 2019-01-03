@@ -1,0 +1,11 @@
+/src/main/resources/application.properties
+/src/main/webapp/resources/image/photo/
+/src/main/webapp/resources/image/post/
+kotlobot.auth.key
+kotlobot.dc.save
+
+/.gradle/
+/.idea/
+/build/
+/gradle/
+/out/

@@ -1,0 +1,43 @@
+{% extends "first_steps/parent" %}
+
+{% block content %}
+
+<div>
+    <div>
+        <ul class="stepper stepper-horizontal">
+            <!-- First Step -->
+            <li class="active">
+                <a href="/init/steps/1">
+                    <span class="circle">1</span>
+                    <span class="label">Впишите имя канала</span>
+                </a>
+            </li>
+
+            <!-- Second Step -->
+            <li>
+                <a class="disabled">
+                    <span class="circle">2</span>
+                    <span class="label">Добавьте бота в канал</span>
+                </a>
+            </li>
+
+            <!-- Third Step -->
+            <li>
+                <a class="disabled">
+                    <span class="circle"><i class="fa fa-warning"></i></span>
+                    <span class="label">Напишите первый пост!</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-offset-4 col-md-4">
+        <form name="addChannelForm" action="/init/steps/1" method="post">
+            <div class="input-group">
+                <label for="inputChannelName">Имя канала:</label>
+                <input type="text" name="channelName" class="form-control {{ invalid }}" id="inputChannelName" placeholder="@public_channel" >
+            </div>
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "index" %}
+
+{% block content %}
+    <form name="registration" action="/register" method="post">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            {% if hasFieldErrors('registration', 'email') %}
+                {% set invalid = "is-invalid" %}
+            {% endif %}
+            <input type="email" name="email" class="form-control {{ invalid }}" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            {% for err in getFieldErrors('registration', 'email') %}
+                <div class="invalid-feedback">
+                    {{ err }}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            {% if hasFieldErrors('registration', 'password') %}
+                {% set invalid = "is-invalid" %}
+            {% endif %}
+            <input type="password" name="password" class="form-control {{ invalid }}" id="exampleInputPassword1" placeholder="Password">
+            {% for err in getFieldErrors('registration', 'password') %}
+                <div class="invalid-feedback">
+                    {{ err }}
+                </div>
+            {% endfor %}
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}

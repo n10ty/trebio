@@ -1,0 +1,52 @@
+{% extends "first_steps/parent" %}
+
+{% block content %}
+
+<div>
+    <div>
+        <ul class="stepper stepper-horizontal">
+            <!-- First Step -->
+            <li>
+                <a class="disabled">
+                    <span class="circle">1</span>
+                    <span class="label">Впишите имя канала</span>
+                </a>
+            </li>
+
+            <!-- Second Step -->
+            <li class="active">
+                <a href="#!">
+                    <span class="circle">2</span>
+                    <span class="label">Добавьте бота в канал</span>
+                </a>
+            </li>
+
+            <!-- Third Step -->
+            <li>
+                <a href="disabled">
+                    <span class="circle"><i class="fa fa-warning"></i></span>
+                    <span class="label">Напишите первый пост!</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-offset-2 col-md-5">
+        <h2>Добавьте <a href="http://t.me/trebiobot">@trebio</a> бота в канал</h2>
+
+        <label>Проверить, есть ли доступ у бота</label>
+        <a id="tothirdstep" href="/init/steps/3" type="button" class="btn btn-primary">Далее</a>
+
+        <span style="display:none;" id="check-progress">Checking...</span>
+        <div style="display:none;" id="check-success" class="alert alert-success" role="alert">
+            Успешно!
+        </div>
+        <div style="display:none;" id="check-error" class="alert alert-danger" role="alert">
+            У бота недостаточно прав. Пожалуйста, прочтите инструкцию как добавить права.
+        </div>
+        <span id="check-result"></span>
+    </div>
+    <script>
+
+    </script>
+</div>
+{% endblock %}

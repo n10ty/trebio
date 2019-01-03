@@ -1,0 +1,14 @@
+{% extends "index" %}
+
+{% block content %}
+<form name="postPhotoForm" action="/post/{{channelId}}/photo" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
+    <div class="form-group">
+        <input type="text" id="formPostPhotoCaption" name="caption">
+        <input type="file" id="formPostPhotoFile" name="file">
+        <div class='col-sm-6'>
+            <input type='text' name="publishAt" class="form-control" id='datetimepicker1' />
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

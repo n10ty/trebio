@@ -1,0 +1,74 @@
+{% extends "index" %}
+
+{% block content %}
+
+<h2 class="page-header">{{ channel.getTitle() }}</h2>
+<div class="page_wrap">
+    <div class="page_body chat_page">
+
+        <div class="history">
+
+            {% for message in messages %}
+
+                {% if message is isPost %}
+                    <div class="message default clearfix" id="message{{ message.getId() }}">
+
+                        <div class="pull_left userpic_wrap">
+
+                            <div class="userpic userpic6" style="width: 42px; height: 42px">
+
+                                <div class="initials" style="line-height: 42px">
+                                    {{ firstLetter }}
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="body">
+
+                            <div class="pull_right date details" title="{{ convertToDate(message.getDate()) }}">
+                                {{ convertToDate(message.getDate()) }}
+                            </div>
+
+                            <div class="from_name">
+                                {{ channel.getTitle() }}
+                            </div>
+
+                            {% if message is hasPhoto %}
+                            <div class="media_wrap clearfix">
+                                <a class="photo_wrap clearfix pull_left" href="photos/photo_1.jpg">
+                                    <img class="photo" src="{{ get_image_link(message.getMedia()) }}" style="width: {{ getImageSize(message.getMedia()).getWidth() }}px; height: {{ getImageSize(message.getMedia()).height() }}px"/>
+                                </a>
+                            </div>
+                            {% endif %}
+
+                            <div class="text">
+                                {% if message is hasPhoto %}
+                                    {{ message.getMedia().getCaption() | n_replace | raw }}
+                                {% else %}
+                                    {{ message.getMessage() | n_replace | raw }}
+                                {% endif %}
+                            </div>
+
+                        </div>
+
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="pull_center">
+            {% if (pageNumber > 1) %}
+                <a class="pagination" href="/history/{{ channelId }}/{{ pageNumber - 1}}">
+                    <<
+                </a>
+            {% endif %}
+            <a class="pagination" href="/history/{{ channelId }}/{{ pageNumber + 1}}">
+                >>
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
